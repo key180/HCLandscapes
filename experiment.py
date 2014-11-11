@@ -19,7 +19,7 @@ import time
     
 tstart = time.ctime()
 
-hcl = getAllHyperCubeConfigs2D() #HCL is a list of all found hypercube configurations, list of objects
+hcl = getAllHyperCubeConfigs3D() #HCL is a list of all found hypercube configurations, list of objects
 nx_hcl = [] # List to put all non cyclical nx versions of hcl hypercubes into
 nx_hcl = hcl #fix later
 #n = 0
