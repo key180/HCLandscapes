@@ -279,7 +279,7 @@ def getAllHyperCubeConfigs2D():
     t = 1
     print("Quick Check:")
     for hc in hyperCList:
-        if 4 != len(hc.edge.values()):
+        if 4 != len(hc.edges()):
             print("ERROR! Not all hc's have 4 edges defined")
             t = 0
     if t == 1:
@@ -303,10 +303,13 @@ def getAllHyperCubeConfigs3D():
     failCnt = 0
     print("Quick Check:")
     for hc in hyperCList:
-        if 12 != len(hc.edge.values()):
+        if 12 != len(hc.edges()):
             print("ERROR! Not all hc's have 12 edges defined. This one has:", len(hc.edge.values()))
             if failCnt == 0:
-                print(hc.dictionary)
+                #print(hc.dictionary)
+                print("ADJ:\n", hc.adj)
+                print("EDGE:\n", hc.edge)
+                print("VALUES:\n", hc.edge.values())
             failCnt += 1
             t = 0
     if t == 1:
@@ -332,10 +335,13 @@ def getAllHyperCubeConfigs4D():
     failCnt = 0
     print("Quick Check:")
     for hc in hyperCList:
-        if 32 != len(hc.edge.values()):
+        if 32 != len(hc.edges()):
             print("ERROR! Not all hc's have 32 edges defined. This one has:", len(hc.edge.values()))
             if failCnt == 0:
-                print(hc.dictionary)
+                #print(hc.dictionary)
+                print("ADJ:\n", hc.adj)
+                print("EDGE:\n", hc.edge)
+                print("VALUES:\n", hc.edge.values())
             failCnt += 1
             t = 0
     if t == 1:
