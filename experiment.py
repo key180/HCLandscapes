@@ -13,7 +13,7 @@ import copy
 import networkx as nx
 import matplotlib.pyplot as plt
 from networkx import graphviz_layout
-
+import os
 import time
 
     
@@ -89,7 +89,11 @@ for uniqHC in nx_hcl:
     plt.figure()
     
     nx.draw(uniqHC)
-    plt.savefig("uniqHC_" + str(cnt))
+    DIR = "output"
+    d = os.path.dirname(DIR)
+    if not os.path.exists(d):
+        os.make(d)
+    plt.savefig(d + "\\" + "uniqHC_" + str(cnt))
     plt.close()
     #nx.relabel_nodes(uniqHC, flatten)
     cnt += 1

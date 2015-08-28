@@ -408,8 +408,9 @@ def isIsomorphicDuplicate(hcL, hc):
     
     for saved_hc in hcL:
         if nx.faster_could_be_isomorphic(saved_hc, hc):
-            if nx.is_isomorphic(saved_hc, hc):
-                return True
+            if nx.fast_could_be_isomorphic(saved_hc, hc):
+                if nx.is_isomorphic(saved_hc, hc):
+                    return True
     return False
     
 def convertMyHC_nxHC(hc):
