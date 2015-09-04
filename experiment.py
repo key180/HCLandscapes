@@ -42,9 +42,9 @@ nx_hcl = hcl #fix later
 
 print("hypercubes generated:", len(hcl))
 print("hypercubes without cycles:", len(nx_hcl))
-print("Time Now:", time.ctime(), "Time Start:", tstart)
+print("Time Now:", time.ctime(), "Time Start:", tstart, time.ctime() - tstart)
 print("Dump Memory from hcl")
-hlc = 5 #Does this work? tk
+hlc = 5 #Does this work to dump memory? tk
 print("hcl Dumped")
 
 

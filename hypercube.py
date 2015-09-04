@@ -306,7 +306,7 @@ def getAllHyperCubeConfigs3D():
         if 12 != len(hc.edge.values()):
             print("ERROR! Not all hc's have 12 edges defined. This one has:", len(hc.edge.values()))
             if failCnt == 0:
-                print(hc.dictionary)
+                print(hc.adj)
             failCnt += 1
             t = 0
     if t == 1:
@@ -335,7 +335,7 @@ def getAllHyperCubeConfigs4D():
         if 32 != len(hc.edge.values()):
             print("ERROR! Not all hc's have 32 edges defined. This one has:", len(hc.edge.values()))
             if failCnt == 0:
-                print(hc.dictionary)
+                print(hc.adj)
             failCnt += 1
             t = 0
     if t == 1:
@@ -408,9 +408,10 @@ def isIsomorphicDuplicate(hcL, hc):
     
     for saved_hc in hcL:
         if nx.faster_could_be_isomorphic(saved_hc, hc):
-            if nx.fast_could_be_isomorphic(saved_hc, hc):
+#            if nx.fast_could_be_isomorphic(saved_hc, hc):
                 if nx.is_isomorphic(saved_hc, hc):
                     return True
+         
     return False
     
 def convertMyHC_nxHC(hc):
